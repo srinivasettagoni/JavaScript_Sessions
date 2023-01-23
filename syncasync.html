@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Sync Async </title>
+</head>
+<body>
+    <script>
+   
+//    function sayHello(){
+//     console.log("Hello Callback")
+//    }
+//     function Hello(){
+//         console.log("Recevied Callback")
+//     }
+//     function say(){
+//         console.log("Done")
+//     }
+
+//     sayHello();
+//     Hello();
+//     say();
+
+//     function sayHello(){
+//     console.log("Hello Callback");
+//    }
+//     function Hello(fn){
+//         console.log("Recevied Callback");
+//         fn()
+//     }
+//     function say(){
+//         console.log("Done");
+//     }
+
+//     setTimeout(Hello,3000,sayHello)
+    
+
+            // Call Back
+    //   function sayHello(){
+    //     console.log("hello")
+    //   }
+    //   function display(fn){                      // here fn declars the callback
+    //   setTimeout(function(){
+    //     console.log("Hai from greet")
+    //   },3000)
+    //        fn();                               // Calling Back
+    // }
+
+    //   function greet(){
+    //     console.log("Last One")
+    //   }
+      
+
+    //  sayHello(greet)
+    //   display();
+        
+
+      //Promise
+      function placeOrder(){
+        return new Promise(function(resolve,reject){
+          setTimeout(function(){
+          console.log("Placing Order")           //Execute when the resolve and reject not mentioned
+          resolve("Order Placed")               //Execute when the resolve happend
+     //     reject()                         //it refers and execute to error  msg
+
+        },3000)
+        })
+       
+      }
+      function Placing(){
+        console.log("Please wait placing the Oder")
+      }
+
+      placeOrder().then(function(data){
+        Placing();
+        console.log(data)
+      })
+      .catch(function(error){
+        console.log("Something went Wrong")
+      })
+      
+    
+     
+
+
+
+
+
+
+    
+    </script>
+</body>
+</html>

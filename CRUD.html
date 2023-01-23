@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CRUD</title>
+        <style>
+          table,th,tr,td{
+            border: 2px solid ;
+          }
+          table{
+            border-collapse: collapse;
+          }
+        </style>
+    </head>
+    <body>
+
+        <!-- EVENT HANDERS -->
+      <!-- <button onclick="clickme()">Click</button>
+      <button onmouseover="clickover()">Click Here</button>
+
+      <select onchange="select()">
+        <option>Degree</option>
+        <option>BTech</option>
+        <option>MTech</option>
+      </select>
+
+      <script>
+        function clickme(){
+            console.log("Clicked")
+        }
+        function clickover(){
+            console.log("Click")
+        }
+        function select(){
+            console.log("Selected")
+        }
+      </script> -->
+      <h1>Registration Form</h1>    
+       <form onsubmit="saveData()">
+        <label>First Name</label>
+        <input type="text" value="" id="fname">
+        <label>Last Name</label>
+        <input type="text" value="" id="lname">
+        <label>Age</label>
+        <input type="number" value="" id="age">
+        <label>Address</label>
+        <input type="textarea" value="" id="address">
+        <input type="submit" value="save">
+        
+       </form>
+       <br><br>
+      
+       <table>
+        <tr>
+          <th>FName</th><th>Lname</th><th>Age</th><th>Address</th>
+        </tr>
+        <tbody id="mainData">
+
+        </tbody>
+       </table>
+       <script>
+           function saveData(){
+            event.preventDefault();
+            let fname = document.getElementById("fname").value;           
+            let lname = document.getElementById("lname").value;
+            let age = document.getElementById("age").value;
+            let address = document.getElementById("address").value;
+            
+            console.log(fname,lname,age,address)
+           
+           let tableData = document.getElementById("mainData");
+           tableData.innerHTML = tableData.innerHTML +`
+            <tr>
+              <td>${fname}</td>
+              <td>${lname}</td>
+              <td>${age}</td>
+              <td>${address}</td>
+              </tr>`
+              reset();
+            }
+            function reset(){
+              document.getElementById("fname").value=""
+              document.getElementById("lname").value=""
+              document.getElementById("age").value=""
+            }
+
+       </script>
+
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <style>
+            table,th,tr,td{
+                border: 2px solid;
+            }
+            table{
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+       <center>
+        <h1>Registration Form</h1>
+        <form onsubmit="saveData()">
+            <label>First Name</label>
+            <input type="text" value="" id="fname"/><br><br>
+            <label>Last Name</label>
+            <input type="text" value="" id="lname"/><br><br>
+            <label>Age</label>
+            <input type="number" value="" id="age"/><br><br>
+            <label>Address</label>
+            <input type="textarea" value="" id="address"/><br><br>
+            <input type="submit" value="Save" />
+        </form>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Address</th>
+            </tr>
+            <tbody id="mainData">
+
+            </tbody>
+        </table>
+    </center>
+    
+    <script>
+      function saveData(){
+        event.preventDefault();
+      let fname=document.getElementById("fname").value
+      let lname=document.getElementById("lname").value
+      let age=document.getElementById("age").value
+      let address=document.getElementById("address").value
+
+      console.log(fname,lname,age,address)
+
+      let tableData =document.getElementById("mainData")
+      tableData.innerHTML=tableData.innerHTML+`
+
+      <tr>
+        <td>${fname}</td>
+        <td>${lname}</td>
+        <td>${age}</td>
+        <td>${address}</td>
+        </tr>
+      `
+      reSet();
+       
+       }
+
+       function reSet(){
+        document.getElementById("fname").value=""
+        document.getElementById("lname").value=""
+        document.getElementById("age").value=""
+        document.getElementById("address").value=""
+       }
+
+       
+
+    </script>
+    </body>
+</html>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Objects JS</title>
+</head>
+<body>
+    <script>
+
+        // var a=30;
+        // console.log(a,this,window);
+        // document.write("Hello") 
+
+
+        // function SayHello(){
+        //     console.log("hello inside window")
+        // }
+
+        // SayHello();
+
+    //     var user={
+    //         name:"Srinu",
+    //         show:function(){
+    //             console.log(this,this.name)
+    //         }
+    //     }
+    //     user.show()
+
+    //    var user2 = {
+    //     name:"test2"
+    //    }        
+    //    user.show.call(user2)
+
+
+    // var std={
+    //     name:"Srinivas",
+    //     rolno:100,
+    //     age:24,.
+    //     occupation:"student"
+    // }
+
+    // document.write(std.name + std.rolno+ std.age + std.occupation);
+
+
+
+    //call, apply, bind (OBJECT LITERAL)
+
+
+      var stud1={
+        name:"Srinivas",
+        rol:101,
+        age:23,
+        displayInfo:function(){
+            console.log("name=",this.name)
+            console.log("rol=",this.rol)
+            console.log("age=",this.age)
+           
+        }
+        }
+       // stud1.displayInfo()
+
+         let stud2={
+            name:"Darwin",
+            rol:123,
+             age:23,
+        }
+
+        //  stud1.displayInfo.call(stud2)
+          //stud1.displayInfo.apply(stud2)
+       
+       let fn=stud1.displayInfo.bind(stud2)
+          console.log(fn());
+
+            //(CONSTRUCTOR FUNCTION)
+
+    //     function display(name,age,rol){
+    //         this.name=name,
+    //         this.age=age,
+    //         this.rol=rol
+    //     }
+         
+    //    let std1 = new display("Srinu",24,12)
+    //    let std2 = new display("Darwin",23,21)
+    //    console.log(std1,std2)
+       
+       
+
+        
+    </script>
+</body>
+</html>l
